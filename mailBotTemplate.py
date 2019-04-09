@@ -49,7 +49,7 @@ with smtplib.SMTP_SSL("smtp.gmail.com", port, context = context) as server:
     ### and so on...
     with open("INSERT_FILE_NAME_HERE.csv") as file:
         reader = csv.reader(file)
-        next(reader)
+        next(reader)#Skips header of csv file
         for name, email in reader:
             print(f"sending email to {name}")
             message = MIMEMultipart()
